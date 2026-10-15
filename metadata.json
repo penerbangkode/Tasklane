@@ -1,0 +1,9 @@
+
+{
+  "uuid": "tasklane@penerbangkode",
+  "name": "Tasklane",
+  "description": "Track time, manage tasks, and stay focused right from the GNOME top bar.",
+  "shell-version": ["50"],
+  "version": 0.1,
+  "url": "https://github.com/penerbangkode/Tasklane"
+}

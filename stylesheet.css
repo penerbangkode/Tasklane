@@ -1,0 +1,311 @@
+/* Compact task-first menu. Monochrome light/dark colors, no nested cards. */
+.tasklane-panel { spacing: 6px; }
+.tasklane-menu {
+    width: 22em;
+    padding: 12px;
+    color: #18181b;
+    background-color: #ffffff;
+    border: 1px solid #e4e4e7;
+    border-radius: 16px;
+}
+.tasklane-header { padding: 0px 0px 10px; spacing: 12px; }
+.tasklane-brand { font-size: 1em; font-weight: 600; }
+.tasklane-muted { color: #71717a; }
+.tasklane-timer-row {
+    margin: 0px 0px 12px;
+    padding: 8px 12px;
+    spacing: 12px;
+    border-left: 3px solid #18181b;
+}
+.tasklane-focus-summary { spacing: 5px; }
+.tasklane-current { max-width: 12em; font-size: 0.95em; font-weight: 600; color: #52525b; }
+.tasklane-clock { font-family: monospace; font-size: 1.5em; font-weight: 600; color: #18181b; }
+.tasklane-button-content { spacing: 6px; }
+.tasklane-action {
+    min-width: 1.7em;
+    min-height: 1.7em;
+    padding: 4px;
+    color: #71717a;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 8px;
+}
+.tasklane-action:hover,
+.tasklane-action:checked { color: #18181b; background-color: #f4f4f5; }
+.tasklane-action:active { color: #ffffff; background-color: #18181b; }
+.tasklane-action:focus { border-color: #18181b; }
+.tasklane-complete { color: #71717a; }
+.tasklane-complete:hover { color: #18181b; }
+.tasklane-more { padding: 4px; }
+.tasklane-tabs-row { padding: 0px 0px 8px; }
+.tasklane-tabs { spacing: 4px; }
+.tasklane-tab {
+    padding: 6px 10px;
+    font-size: 0.85em;
+    color: #52525b;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-radius: 6px;
+}
+.tasklane-tab:hover { color: #18181b; background-color: #fafafa; }
+.tasklane-tab:focus { border-color: #18181b; }
+.tasklane-tab:active { background-color: #f4f4f5; }
+.tasklane-scroll { max-height: 17em; }
+.tasklane-list-container { padding: 0px; }
+.tasklane-task-row,
+.tasklane-completed-row {
+    margin: 0px 0px 4px;
+    padding: 4px 0px 4px 6px;
+    spacing: 4px;
+    border-left: 2px solid #e4e4e7;
+    border-radius: 0px;
+}
+.tasklane-task-active { border-left-color: #18181b; }
+.tasklane-task-active .tasklane-task { font-weight: 600; }
+.tasklane-task { max-width: 10em; font-size: 1em; color: #18181b; }
+.tasklane-task-details { spacing: 3px; padding: 4px 0px; }
+.tasklane-finished { max-width: 12em; font-size: 1em; color: #52525b; }
+.tasklane-time { font-family: monospace; font-size: 0.85em; color: #52525b; }
+.tasklane-task-options { padding: 0px 0px 8px 12px; }
+.tasklane-delete { font-size: 0.85em; color: #52525b; }
+.tasklane-empty { padding: 24px 8px; font-size: 0.85em; color: #52525b; }
+.tasklane-add-row {
+    margin-top: 12px;
+    padding: 4px 0px 0px;
+    spacing: 8px;
+}
+.tasklane-entry {
+    min-width: 15em;
+    padding: 8px 6px;
+    font-size: 0.85em;
+    color: #18181b;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    selection-background-color: #18181b;
+    selected-color: #ffffff;
+}
+.tasklane-entry StLabel { color: #52525b; }
+.tasklane-entry:hover { background-color: #fafafa; }
+.tasklane-entry:focus { border-color: #18181b; }
+
+/* Dark mode has identical geometry and independent surface/contrast values. */
+.tasklane-menu.tasklane-dark { color: #fafafa; background-color: #18181b; border-color: #3f3f46; }
+.tasklane-dark .tasklane-muted,
+.tasklane-dark .tasklane-action { color: #a1a1aa; }
+.tasklane-dark .tasklane-current,
+.tasklane-dark .tasklane-tab,
+.tasklane-dark .tasklane-finished,
+.tasklane-dark .tasklane-time,
+.tasklane-dark .tasklane-delete,
+.tasklane-dark .tasklane-empty,
+.tasklane-dark .tasklane-entry StLabel { color: #d4d4d8; }
+.tasklane-dark .tasklane-clock,
+.tasklane-dark .tasklane-task,
+.tasklane-dark .tasklane-entry { color: #fafafa; }
+.tasklane-dark .tasklane-timer-row { border-left-color: #fafafa; }
+.tasklane-dark .tasklane-task-row,
+.tasklane-dark .tasklane-completed-row { border-left-color: #3f3f46; }
+.tasklane-dark .tasklane-task-active { border-left-color: #fafafa; }
+.tasklane-dark .tasklane-action:hover,
+.tasklane-dark .tasklane-action:checked { color: #fafafa; background-color: #3f3f46; }
+.tasklane-dark .tasklane-action:active { color: #18181b; background-color: #fafafa; }
+.tasklane-dark .tasklane-action:focus { border-color: #fafafa; }
+.tasklane-dark .tasklane-entry:hover { background-color: #27272a; }
+.tasklane-dark .tasklane-tab:hover { color: #fafafa; background-color: #27272a; }
+.tasklane-dark .tasklane-tab:focus { border-color: #fafafa; }
+.tasklane-dark .tasklane-tab:active { background-color: #3f3f46; }
+.tasklane-dark .tasklane-entry { selection-background-color: #fafafa; selected-color: #18181b; }
+.tasklane-dark .tasklane-entry:focus { border-color: #fafafa; }
+
+
+.tasklane-appearance { padding: 0px 0px 12px; spacing: 8px; }
+.tasklane-choice {
+    padding: 7px 8px;
+    color: #52525b;
+    font-size: 0.85em;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 8px;
+}
+.tasklane-choice:hover { background-color: #e4e4e7; }
+.tasklane-choice:focus { border-color: #18181b; }
+.tasklane-choice:active { color: #ffffff; background-color: #18181b; }
+.tasklane-undo { margin-top: 8px; padding: 4px 8px; spacing: 8px; border-left: 2px solid #e4e4e7; }
+.tasklane-dark .tasklane-choice { color: #d4d4d8; background-color: transparent; }
+.tasklane-dark .tasklane-choice:focus { border-color: #fafafa; }
+.tasklane-dark .tasklane-choice:hover { background-color: #3f3f46; }
+.tasklane-dark .tasklane-choice:active { color: #18181b; background-color: #fafafa; }
+.tasklane-dark .tasklane-undo { border-left-color: #3f3f46; }
+
+/* High contrast keeps neutral styling but removes muted text and weak edges. */
+.tasklane-menu.tasklane-high-contrast { color: #000000; background-color: #ffffff; border-color: #000000; }
+.tasklane-high-contrast .tasklane-muted,
+.tasklane-high-contrast .tasklane-action,
+.tasklane-high-contrast .tasklane-current,
+.tasklane-high-contrast .tasklane-clock,
+.tasklane-high-contrast .tasklane-task,
+.tasklane-high-contrast .tasklane-finished,
+.tasklane-high-contrast .tasklane-time,
+.tasklane-high-contrast .tasklane-tab,
+.tasklane-high-contrast .tasklane-entry,
+.tasklane-high-contrast .tasklane-entry StLabel,
+.tasklane-high-contrast .tasklane-delete,
+.tasklane-high-contrast .tasklane-empty,
+.tasklane-high-contrast .tasklane-choice { color: #000000; }
+.tasklane-high-contrast .tasklane-action,
+.tasklane-high-contrast .tasklane-entry,
+.tasklane-high-contrast .tasklane-choice,
+.tasklane-high-contrast .tasklane-tab:checked,
+.tasklane-high-contrast .tasklane-timer-row,
+.tasklane-high-contrast .tasklane-add-row { border-color: #000000; }
+.tasklane-high-contrast .tasklane-action:focus,
+.tasklane-high-contrast .tasklane-entry:focus,
+.tasklane-high-contrast .tasklane-tab:focus,
+.tasklane-high-contrast .tasklane-choice:focus { border-color: #000000; border-width: 2px; }
+.tasklane-high-contrast .tasklane-action:active,
+.tasklane-high-contrast .tasklane-choice:active { color: #ffffff; background-color: #000000; }
+.tasklane-menu.tasklane-dark.tasklane-high-contrast { color: #ffffff; background-color: #000000; border-color: #ffffff; }
+.tasklane-dark.tasklane-high-contrast .tasklane-muted,
+.tasklane-dark.tasklane-high-contrast .tasklane-action,
+.tasklane-dark.tasklane-high-contrast .tasklane-current,
+.tasklane-dark.tasklane-high-contrast .tasklane-clock,
+.tasklane-dark.tasklane-high-contrast .tasklane-task,
+.tasklane-dark.tasklane-high-contrast .tasklane-finished,
+.tasklane-dark.tasklane-high-contrast .tasklane-time,
+.tasklane-dark.tasklane-high-contrast .tasklane-tab,
+.tasklane-dark.tasklane-high-contrast .tasklane-entry,
+.tasklane-dark.tasklane-high-contrast .tasklane-entry StLabel,
+.tasklane-dark.tasklane-high-contrast .tasklane-delete,
+.tasklane-dark.tasklane-high-contrast .tasklane-empty,
+.tasklane-dark.tasklane-high-contrast .tasklane-choice { color: #ffffff; }
+.tasklane-dark.tasklane-high-contrast .tasklane-action,
+.tasklane-dark.tasklane-high-contrast .tasklane-entry,
+.tasklane-dark.tasklane-high-contrast .tasklane-choice,
+.tasklane-dark.tasklane-high-contrast .tasklane-tab:checked,
+.tasklane-dark.tasklane-high-contrast .tasklane-timer-row,
+.tasklane-dark.tasklane-high-contrast .tasklane-add-row { border-color: #ffffff; }
+.tasklane-dark.tasklane-high-contrast .tasklane-action:focus,
+.tasklane-dark.tasklane-high-contrast .tasklane-entry:focus,
+.tasklane-dark.tasklane-high-contrast .tasklane-tab:focus,
+.tasklane-dark.tasklane-high-contrast .tasklane-choice:focus { border-color: #ffffff; }
+.tasklane-dark.tasklane-high-contrast .tasklane-action:active,
+.tasklane-dark.tasklane-high-contrast .tasklane-choice:active { color: #000000; background-color: #ffffff; }
+
+
+/* Persistent selection is stronger than hover/focus and remains visible in
+ * both appearance modes, including the high-contrast variants. */
+.tasklane-tab:checked,
+.tasklane-tab:checked:hover,
+.tasklane-choice:checked,
+.tasklane-choice:checked:hover {
+    color: #ffffff;
+    background-color: #18181b;
+    border-color: #18181b;
+    font-weight: 600;
+}
+.tasklane-tab:checked:focus,
+.tasklane-choice:checked:focus { border-color: #71717a; }
+.tasklane-dark .tasklane-tab:checked,
+.tasklane-dark .tasklane-tab:checked:hover,
+.tasklane-dark .tasklane-choice:checked,
+.tasklane-dark .tasklane-choice:checked:hover {
+    color: #18181b;
+    background-color: #fafafa;
+    border-color: #fafafa;
+}
+.tasklane-dark .tasklane-tab:checked:focus,
+.tasklane-dark .tasklane-choice:checked:focus { border-color: #71717a; }
+.tasklane-high-contrast .tasklane-tab:checked,
+.tasklane-high-contrast .tasklane-choice:checked {
+    color: #ffffff;
+    background-color: #000000;
+    border-color: #000000;
+}
+.tasklane-dark.tasklane-high-contrast .tasklane-tab:checked,
+.tasklane-dark.tasklane-high-contrast .tasklane-choice:checked {
+    color: #000000;
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+.tasklane-high-contrast .tasklane-tab:checked:focus,
+.tasklane-high-contrast .tasklane-choice:checked:focus,
+.tasklane-dark.tasklane-high-contrast .tasklane-tab:checked:focus,
+.tasklane-dark.tasklane-high-contrast .tasklane-choice:checked:focus { border-color: #71717a; }
+
+
+/* One circular completion mark; no persistent outer checkbox tile. */
+.tasklane-menu .tasklane-complete,
+.tasklane-menu .tasklane-complete:hover,
+.tasklane-menu .tasklane-complete:checked,
+.tasklane-menu .tasklane-complete:active {
+    background-color: transparent;
+    border-radius: 999px;
+}
+.tasklane-completion-mark {
+    padding: 2px;
+    border: 1px solid #71717a;
+    border-radius: 999px;
+    color: #ffffff;
+}
+.tasklane-completion-mark-done { border-color: #18181b; background-color: #18181b; }
+.tasklane-complete:hover .tasklane-completion-mark { border-color: #18181b; }
+.tasklane-dark .tasklane-completion-mark { border-color: #a1a1aa; color: #18181b; }
+.tasklane-dark .tasklane-completion-mark-done { border-color: #fafafa; background-color: #fafafa; }
+.tasklane-dark .tasklane-complete:hover .tasklane-completion-mark { border-color: #fafafa; }
+.tasklane-high-contrast .tasklane-completion-mark { border-color: #000000; }
+.tasklane-high-contrast .tasklane-completion-mark-done { background-color: #000000; color: #ffffff; }
+.tasklane-dark.tasklane-high-contrast .tasklane-completion-mark { border-color: #ffffff; }
+.tasklane-dark.tasklane-high-contrast .tasklane-completion-mark-done { background-color: #ffffff; color: #000000; }
+
+/* A destructive action is visually distinct from ordinary task controls. */
+.tasklane-menu .tasklane-delete {
+    color: #ffffff;
+    background-color: #b91c1c;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+.tasklane-menu .tasklane-delete:hover { color: #ffffff; background-color: #991b1b; }
+.tasklane-menu .tasklane-delete:active { color: #ffffff; background-color: #7f1d1d; }
+.tasklane-menu .tasklane-delete:focus { border-color: #ffffff; }
+.tasklane-menu.tasklane-dark .tasklane-delete { color: #ffffff; background-color: #b91c1c; }
+.tasklane-menu.tasklane-dark .tasklane-delete:hover { color: #ffffff; background-color: #991b1b; }
+.tasklane-menu.tasklane-dark .tasklane-delete:active { color: #ffffff; background-color: #7f1d1d; }
+
+
+/* One compact timer group; labels communicate state without relying on color. */
+.tasklane-timer-details { spacing: 8px; }
+.tasklane-timer-state { font-size: 0.8em; color: #52525b; }
+.tasklane-menu .tasklane-timer-control {
+    font-size: 0.85em;
+    min-width: 4em;
+    padding: 5px 8px;
+    color: #ffffff;
+    background-color: #18181b;
+}
+.tasklane-menu .tasklane-timer-control:hover { color: #ffffff; background-color: #3f3f46; }
+.tasklane-menu .tasklane-timer-control:focus { border-color: #71717a; }
+.tasklane-menu .tasklane-timer-control:disabled { color: #71717a; background-color: #f4f4f5; }
+.tasklane-timer-idle { border-left-color: #a1a1aa; }
+.tasklane-timer-idle .tasklane-clock { font-size: 1em; font-weight: 400; color: #52525b; }
+.tasklane-dark .tasklane-timer-state { color: #d4d4d8; }
+.tasklane-menu.tasklane-dark .tasklane-timer-control { color: #18181b; background-color: #fafafa; }
+.tasklane-menu.tasklane-dark .tasklane-timer-control:hover { color: #18181b; background-color: #d4d4d8; }
+.tasklane-menu.tasklane-dark .tasklane-timer-control:disabled { color: #a1a1aa; background-color: #27272a; }
+.tasklane-dark .tasklane-timer-idle { border-left-color: #71717a; }
+.tasklane-dark .tasklane-timer-idle .tasklane-clock { color: #d4d4d8; }
+.tasklane-high-contrast .tasklane-timer-state,
+.tasklane-high-contrast .tasklane-timer-idle .tasklane-clock { color: #000000; }
+.tasklane-dark.tasklane-high-contrast .tasklane-timer-state,
+.tasklane-dark.tasklane-high-contrast .tasklane-timer-idle .tasklane-clock { color: #ffffff; }
+.tasklane-settings-heading { padding: 8px 0px; font-weight: 600; }
+.tasklane-settings-hint { padding: 0px; font-size: 0.85em; color: #52525b; }
+.tasklane-dark .tasklane-settings-hint { color: #d4d4d8; }
+.tasklane-high-contrast .tasklane-settings-hint { color: #000000; }
+.tasklane-dark.tasklane-high-contrast .tasklane-settings-hint { color: #ffffff; }
+
+/* Low-opacity versions of the existing action hover colors. Playback inherits
+ * the same transparent, hover, focus and pressed styles as other icon actions. */
+.tasklane-task-row.tasklane-task-revealed { background-color: rgba(244, 244, 245, 0.35); }
+.tasklane-dark .tasklane-task-row.tasklane-task-revealed { background-color: rgba(63, 63, 70, 0.16); }
